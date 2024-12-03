@@ -389,3 +389,39 @@ Requires a valid JWT token in the Authorization header: `Authorization: Bearer <
     "message": "Error message"
 }
 ```
+
+## 📡 Socket.IO Integration
+**Description:**  
+Socket.IO is used for real-time, bidirectional communication between web clients and servers. It enables features like live chat, real-time notifications, and more.
+
+### 📦 Installation
+To install Socket.IO, use npm:
+```bash
+npm install socket.io
+```
+
+### 🚀 Usage
+Here's a basic example of how to set up a Socket.IO server:
+
+```javascript
+const io = require('socket.io')(3000);
+
+io.on('connection', (socket) => {
+    console.log('A user connected');
+
+    socket.on('disconnect', () => {
+        console.log('User disconnected');
+    });
+
+    socket.on('chat message', (msg) => {
+        io.emit('chat message', msg);
+    });
+});
+```
+
+### 📚 Documentation
+- **Connection Event:** Triggered when a client connects to the server.
+- **Disconnect Event:** Triggered when a client disconnects from the server.
+- **Custom Events:** You can define custom events like `chat message` to handle specific actions.
+
+For more detailed documentation, visit the [Socket.IO website](https://socket.io/docs/).
