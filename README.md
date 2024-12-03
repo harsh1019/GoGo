@@ -15,7 +15,7 @@ The request body should be in JSON format and include the following fields:
 - **email (string, required):** User's email address (must be a valid email).
 - **password (string, required):** User's password (minimum 6 characters).
 
-**Example Response:**
+**Example Responses:**
 ```json
 {
     "user": {
